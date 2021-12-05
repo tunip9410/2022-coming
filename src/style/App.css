@@ -6,7 +6,7 @@ html, body {
 }
 
 #root {
-    background-image: url(./image/2021-comming-out.png);
+    background-image: url(../image/2021-comming-out.png);
     background-size: cover;
     height: 100%;
     text-align: center;
@@ -15,6 +15,14 @@ html, body {
 
 .title {
     margin: 0px;
-    font-size: 50px;
+    font-size: 30px;
     padding-top: 10%;
+}
+
+#dday {
+    font-size: 70px;
+}
+
+.comment {
+    margin-top: 10%;
 }
