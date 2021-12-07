@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { setInterval } from 'timers';
 import './style/App.css';
 import Comment from './router/comment'
-import firebase from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics";
 import "firebase/firestore";
 
 const firebaseConfig = {
@@ -16,10 +16,10 @@ const firebaseConfig = {
     measurementId: "G-KH6T275EJ8"
 };
 
-const app = firebase.initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
 
-function App() {
+function App(): JSX.Element {
     function setDay() {
         const ddayElement = document.getElementById("dday");
         const dday: number = new Date(2022, 0, 1).getTime();
