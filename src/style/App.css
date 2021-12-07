@@ -26,3 +26,31 @@ html, body {
 .comment {
     margin-top: 10%;
 }
+
+.addComment {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.input-comment {
+    width: 350px;
+    height: 35px;
+    border: 2px solid #fff;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 25px;
+    border-radius: 10px;
+    color: white;
+}
+
+.addButton {
+    border: 2px solid #fff;
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    margin-left: 15px;
+}
+
+.send-image {
+    margin-top: 5px
+}

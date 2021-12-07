@@ -29,14 +29,18 @@ function App(): JSX.Element {
         const hour :number = Math.ceil((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const min :number = Math.ceil((gap % (1000 * 60 * 60)) / (1000 * 60));
         const sec :number = Math.ceil((gap % (1000 * 60)) / 1000);
+        // const [day, hour, min, sec] = [0, 0, 0, 0]
         if (ddayElement !== null) {
-            ddayElement.innerHTML = day + " : " + hour + " : " + min + " : " + sec
+            if (day <= 0 && hour <= 0 && min <= 0 && sec <= 0) {
+                ddayElement.innerHTML = "happy new year!!!"
+            } else {
+                ddayElement.innerHTML = day + " : " + hour + " : " + min + " : " + sec
+            }
         }
     }
 
     setInterval(() => {
         setDay()
-        console.log(123)
     }, 100)
 
     return (
