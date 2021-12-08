@@ -45,7 +45,7 @@ function App(): JSX.Element {
 
     return (
         <div className="App">
-            <h1 className="title">2022 is coming</h1>
+            <div className="title">2022 is coming</div>
             <div className="DDay">
                 <h1 id="dday">--</h1>
             </div>

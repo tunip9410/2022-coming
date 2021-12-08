@@ -18,7 +18,7 @@ function Comment() {
         const unsub = onSnapshot(doc(getFirestore(), 'comment', 'comments'), (doc) => {
             if (doc.exists()) {
                 console.log(doc.data().commentArray)
-                setComments(doc.data().commentArray)
+                setComments(doc.data().commentArray.sort((a: any, b: any) => parseFloat(b.time) - parseFloat(a.time)))
                 console.log(123)
             }
         })
@@ -55,10 +55,11 @@ function Comment() {
     return (
         <div className="comment">
             {comments !== undefined && (
-                <div className="comments">
+                <div className="comments" id="comments-box">
                     {comments.map((comment: any): JSX.Element => (
-                        <div key={comment.time}>
-                            {comment.content}
+                        <div key={comment.time} className="comment-box">
+                            <p className="comment-text">{comment.content}</p>
+                            <p className="comment-date">{comment.date}</p>
                         </div>
                     ))}
                 </div>

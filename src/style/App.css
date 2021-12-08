@@ -5,6 +5,15 @@ html, body {
     padding: 0;
 }
 
+@font-face {
+    font-family: montserrat;
+    src: url(../font/Montserrat-Regular.ttf);
+}
+
+* {
+    font-family: montserrat;
+}
+
 #root {
     background-image: url(../image/2021-comming-out.png);
     background-size: cover;
@@ -17,14 +26,33 @@ html, body {
     margin: 0px;
     font-size: 30px;
     padding-top: 10%;
+    margin-bottom: 15px;
 }
 
 #dday {
     font-size: 70px;
+    background-color: rgba(218, 215, 215, 0.288);
+    width: 700px;
+    margin: 0px auto;
+    border-radius: 20px;
+    padding-bottom: 10px;
 }
 
-.comment {
-    margin-top: 10%;
+.comments {
+    margin: 0 auto;
+    margin-top: 13%;
+    height: 280px;
+    width: 500px;
+    overflow: auto;
+}
+
+.comments::-webkit-scrollbar {
+    background-color: #00000000;
+}
+
+#comments::-webkit-scrollbar-thumb {
+    background-color: darkslategray;
+    border-radius: 30px;
 }
 
 .addComment {
@@ -34,13 +62,14 @@ html, body {
 }
 
 .input-comment {
-    width: 350px;
+    width: 400px;
     height: 35px;
     border: 2px solid #fff;
     background-color: rgba(255, 255, 255, 0);
     font-size: 25px;
     border-radius: 10px;
     color: white;
+    padding-left: 10px;
 }
 
 .addButton {
@@ -53,4 +82,28 @@ html, body {
 
 .send-image {
     margin-top: 5px
+}
+
+.comment-box {
+    width: 400px;
+    background-color: rgba(218, 215, 215, 0.288);
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.comment-text {
+    font-size: 18px;
+    margin: 0px;
+    padding: 15px;
+    width: 380px;
+    word-break: break-all;
+}
+
+.comment-date {
+    padding: 15px;
+    padding-top: 0px;
+    margin: 0px;
+    font-size: 10px;
 }
