@@ -14,12 +14,9 @@ function Comment() {
     const commentInputElement: any = document.getElementById("input-comment")
 
     useEffect(() => {
-        console.log(456)
         const unsub = onSnapshot(doc(getFirestore(), 'comment', 'comments'), (doc) => {
             if (doc.exists()) {
-                console.log(doc.data().commentArray)
                 setComments(doc.data().commentArray.sort((a: any, b: any) => parseFloat(b.time) - parseFloat(a.time)))
-                console.log(123)
             }
         })
         return () => unsub()

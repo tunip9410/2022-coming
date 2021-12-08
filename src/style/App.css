@@ -123,6 +123,16 @@ html, body {
     }
 }
 
+@media screen and (max-height: 950px) {
+    .comments {
+        margin-top: 5%
+    }
+
+    .title {
+        padding-top: 7%
+    }
+}
+
 @media screen and (max-width: 501px) {
     #dday {
         width: 300px;
@@ -140,5 +150,20 @@ html, body {
 
     .input-comment {
         width: 280px;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    #dday {
+        width: 500px;
+        font-size: 50px;
+    }
+
+    .title {
+        padding-top: 5%;
+    }
+    
+    .comments {
+        margin-top: 5%;
     }
 }
