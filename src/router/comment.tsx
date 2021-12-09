@@ -28,14 +28,16 @@ function Comment() {
     }
     
     async function onSendClick() {
-        let monthArr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-        await updateDoc(doc(getFirestore(), 'comment', 'comments'), {
-            commentArray: arrayUnion({
-                content: commentInput,
-                time: new Date().getTime(),
-                date: monthArr[new Date().getMonth()] + " " + new Date().getDate() + ", " + new Date().getFullYear()
+        if (commentInput !== "") {
+            let monthArr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+            await updateDoc(doc(getFirestore(), 'comment', 'comments'), {
+                commentArray: arrayUnion({
+                    content: commentInput,
+                    time: new Date().getTime(),
+                    date: monthArr[new Date().getMonth()] + " " + new Date().getDate() + ", " + new Date().getFullYear()
+                })
             })
-        })
+        }
 
         setCommentInput("")
         if (commentInputElement instanceof HTMLInputElement) {
