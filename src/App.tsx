@@ -31,7 +31,7 @@ function App(): JSX.Element {
         const sec :number = Math.ceil((gap % (1000 * 60)) / 1000);
         // const [day, hour, min, sec] = [0, 0, 0, 0]
         if (ddayElement !== null) {
-            if (day <= 0 && hour <= 0 && min <= 0 && sec <= 0) {
+            if (day <= 0) {
                 ddayElement.innerHTML = "happy new year!!!"
             } else {
                 ddayElement.innerHTML = day + " : " + hour + " : " + min + " : " + sec
