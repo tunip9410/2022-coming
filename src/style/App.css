@@ -11,36 +11,36 @@ html, body {
 }
 
 * {
-    font-family: montserrat;
+    font-family: montserrat, sans-serif;
 }
 
 #root {
-    background-image: url(../image/2021-comming-out.png);
+    background-image: url(../image/LAST-OF-2022.png);
     background-size: cover;
+    background-position: center;
     height: 100%;
     text-align: center;
     color: #fff;
 }
 
 .title {
-    margin: 0px;
     font-size: 30px;
     padding-top: 10%;
-    margin-bottom: 15px;
+    margin: 0 0 15px;
+
 }
 
 #dday {
     font-size: 70px;
     background-color: rgba(218, 215, 215, 0.288);
     width: 700px;
-    margin: 0px auto;
+    margin: 0 auto;
     border-radius: 20px;
     padding-bottom: 10px;
 }
 
 .comments {
-    margin: 0 auto;
-    margin-top: 13%;
+    margin: 13% auto 0;
     height: 280px;
     width: 500px;
     overflow: auto;
@@ -70,6 +70,7 @@ html, body {
     border-radius: 10px;
     color: white;
     padding-left: 10px;
+    margin-bottom: 20px;
 }
 
 .addButton {
@@ -95,7 +96,7 @@ html, body {
 
 .comment-text {
     font-size: 18px;
-    margin: 0px;
+    margin: 0;
     padding: 15px;
     width: 380px;
     word-break: break-all;
@@ -103,8 +104,8 @@ html, body {
 
 .comment-date {
     padding: 15px;
-    padding-top: 0px;
-    margin: 0px;
+    padding-top: 0;
+    margin: 0;
     font-size: 10px;
 }
 
@@ -126,10 +127,6 @@ html, body {
 @media screen and (max-height: 950px) {
     .comments {
         margin-top: 5%
-    }
-
-    .title {
-        padding-top: 7%
     }
 }
 

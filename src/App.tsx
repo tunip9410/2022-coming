@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { setInterval } from 'timers';
 import './style/App.css';
 import Comment from './router/comment'
@@ -22,7 +22,7 @@ initializeApp(firebaseConfig);
 function App(): JSX.Element {
     function setDay() {
         const ddayElement = document.getElementById("dday");
-        const dday: number = new Date(2022, 0, 1).getTime();
+        const dday: number = new Date(2023, 0, 1).getTime();
         const today: number = new Date().getTime();
         const gap = dday - today;
         const day :number = Math.ceil(gap / (1000 * 60 * 60 * 24));
@@ -45,11 +45,12 @@ function App(): JSX.Element {
 
     return (
         <div className="App">
-            <div className="title">2022 is coming</div>
+            <div className="title">2023 is coming</div>
             <div className="DDay">
                 <h1 id="dday">--</h1>
             </div>
             <Comment/>
+            <audio id={"audio"} src={"./sound/Aries.mp3"} autoPlay controls loop/>
         </div>
     );
 }

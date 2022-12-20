@@ -3,7 +3,6 @@ import {
     arrayUnion,
     updateDoc,
     doc,
-    setDoc,
     onSnapshot,
     getFirestore } from '@firebase/firestore';
 import SendImage from "../image/send-white.png";
@@ -14,7 +13,7 @@ function Comment() {
     const commentInputElement: any = document.getElementById("input-comment")
 
     useEffect(() => {
-        const unsub = onSnapshot(doc(getFirestore(), 'comment', 'comments'), (doc) => {
+        const unsub = onSnapshot(doc(getFirestore(), 'comment', '2023-comments'), (doc) => {
             if (doc.exists()) {
                 setComments(doc.data().commentArray.sort((a: any, b: any) => parseFloat(b.time) - parseFloat(a.time)))
             }
@@ -30,7 +29,7 @@ function Comment() {
     async function onSendClick() {
         if (commentInput !== "") {
             let monthArr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-            await updateDoc(doc(getFirestore(), 'comment', 'comments'), {
+            await updateDoc(doc(getFirestore(), 'comment', '2023-comments'), {
                 commentArray: arrayUnion({
                     content: commentInput,
                     time: new Date().getTime(),
