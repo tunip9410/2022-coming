@@ -11,6 +11,7 @@ function Comment() {
     const [comments, setComments] = useState([])
     const [commentInput, setCommentInput] = useState<String>("")
     const commentInputElement: any = document.getElementById("input-comment")
+    const [count, setCount] = useState(0)
 
     useEffect(() => {
         const unsub = onSnapshot(doc(getFirestore(), 'comment', '2023-comments'), (doc) => {
@@ -27,7 +28,7 @@ function Comment() {
     }
     
     async function onSendClick() {
-        if (commentInput !== "") {
+        if (commentInput !== "" && commentInput.length < 30 && count < 3) {
             let monthArr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
             await updateDoc(doc(getFirestore(), 'comment', '2023-comments'), {
                 commentArray: arrayUnion({
@@ -49,6 +50,8 @@ function Comment() {
             onSendClick()
         }
     }
+
+    setInterval(() => setCount(0), 6000)
 
     return (
         <div className="comment">
