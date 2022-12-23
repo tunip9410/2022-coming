@@ -145,6 +145,10 @@ html, body {
         width: 280px;
     }
 
+    .comment-text {
+        width: 250px;
+    }
+
     .input-comment {
         width: 280px;
     }
