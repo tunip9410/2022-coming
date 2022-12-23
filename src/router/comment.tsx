@@ -28,7 +28,7 @@ function Comment() {
     }
     
     async function onSendClick() {
-        if (commentInput !== "" && commentInput.length < 30 && count < 3) {
+        if (commentInput !== "" && commentInput.length < 30 && count < 3 && commentInput.trim() !== "") {
             let monthArr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
             await updateDoc(doc(getFirestore(), 'comment', '2023-comments'), {
                 commentArray: arrayUnion({

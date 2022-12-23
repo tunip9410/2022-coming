@@ -25,13 +25,13 @@ function App(): JSX.Element {
         const dday: number = new Date(2023, 0, 1).getTime();
         const today: number = new Date().getTime();
         const gap = dday - today;
-        const day :number = Math.ceil(gap / (1000 * 60 * 60 * 24));
-        const hour :number = Math.ceil((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const min :number = Math.ceil((gap % (1000 * 60 * 60)) / (1000 * 60));
-        const sec :number = Math.ceil((gap % (1000 * 60)) / 1000);
+        const day :number = Math.ceil(gap / (1000 * 60 * 60 * 24)) -1;
+        const hour :number = Math.ceil((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) -1;
+        const min :number = Math.ceil((gap % (1000 * 60 * 60)) / (1000 * 60)) -1;
+        const sec :number = Math.ceil((gap % (1000 * 60)) / 1000) -1;
         // const [day, hour, min, sec] = [0, 0, 0, 0]
         if (ddayElement !== null) {
-            if (day <= 0) {
+            if (day <= 0 && hour <= 0 && min <= 0 && sec <= 0) {
                 ddayElement.innerHTML = "happy new year!!!"
             } else {
                 ddayElement.innerHTML = day + " : " + hour + " : " + min + " : " + sec
