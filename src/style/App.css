@@ -15,7 +15,7 @@ html, body {
 }
 
 #root {
-    background-image: url(../image/LAST-OF-2022.png);
+    background-image: url(../image/DSC00983.jpg);
     background-size: cover;
     background-position: center;
     height: 100%;
@@ -163,7 +163,7 @@ html, body {
     .title {
         padding-top: 5%;
     }
-    
+
     .comments {
         margin-top: 5%;
     }

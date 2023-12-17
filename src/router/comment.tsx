@@ -14,7 +14,7 @@ function Comment() {
     const [count, setCount] = useState(0)
 
     useEffect(() => {
-        const unsub = onSnapshot(doc(getFirestore(), 'comment', '2023-comments'), (doc) => {
+        const unsub = onSnapshot(doc(getFirestore(), 'comment', '2024-comments'), (doc) => {
             if (doc.exists()) {
                 setComments(doc.data().commentArray.sort((a: any, b: any) => parseFloat(b.time) - parseFloat(a.time)))
             }
@@ -26,11 +26,11 @@ function Comment() {
         const {target: {value}} = event;
         setCommentInput(value)
     }
-    
+
     async function onSendClick() {
         if (commentInput !== "" && commentInput.length < 30 && count < 3 && commentInput.trim() !== "") {
             let monthArr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-            await updateDoc(doc(getFirestore(), 'comment', '2023-comments'), {
+            await updateDoc(doc(getFirestore(), 'comment', '2024-comments'), {
                 commentArray: arrayUnion({
                     content: commentInput,
                     time: new Date().getTime(),
